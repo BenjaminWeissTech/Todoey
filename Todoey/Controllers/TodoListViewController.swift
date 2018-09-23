@@ -20,6 +20,10 @@ class TodoListViewController: UITableViewController {
         let newItem = Item()
         newItem.title = "Find Mike"
         itemArray.append(newItem)
+        
+        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+            itemArray = items
+        }
 
     }
     
@@ -36,7 +40,7 @@ class TodoListViewController: UITableViewController {
         
         cell.textLabel?.text = item.title
         
-        cell.accessoryType = item.done = true ? .checkmark : .none
+        cell.accessoryType = item.done ? .checkmark : .none
 
         return cell
     }
