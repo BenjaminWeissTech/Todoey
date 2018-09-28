@@ -91,7 +91,7 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems(){
-        if let data = try? Data(contentsOf: dataFilePath!)
+        if let data = try? Data(contentsOf: dataFilePath!){
         
         let decoder = PropertyListDecoder()
         
@@ -100,6 +100,7 @@ class TodoListViewController: UITableViewController {
         } catch {
         
         }
+    }
     }
 
 
